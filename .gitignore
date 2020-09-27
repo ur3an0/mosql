@@ -1,3 +1,8 @@
 collections.yml
 /.bundle/
 Gemfile.lock
+/.idea/.rakeTasks
+/.idea/modules.xml
+/.idea/mosql.iml
+/.idea/vcs.xml
+/.idea/workspace.xml
