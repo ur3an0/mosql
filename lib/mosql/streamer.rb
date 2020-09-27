@@ -16,7 +16,7 @@ module MoSQL
         instance_variable_set(:"@#{parm.to_s}", opts[parm])
       end
 
-      @done    = false
+      @done = false
     end
 
     def stop
@@ -73,7 +73,7 @@ module MoSQL
           raise if e.kind_of?(Mongo::OperationFailure) && [11000, 11001].include?(e.error_code)
           # Cursor timeout
           raise if e.kind_of?(Mongo::OperationFailure) && e.message =~ /^Query response returned CURSOR_NOT_FOUND/
-          delay = 0.5 * (1.5 ** try)
+          delay = 0.5 * (1.5**try)
           log.warn("Mongo exception: #{e}, sleeping #{delay}s...")
           sleep(delay)
         end
@@ -240,7 +240,7 @@ module MoSQL
           schema = @schema.find_ns!(ns)
           keys = {}
           primary_sql_keys.each do |key|
-            source =  schema[:columns].find {|c| c[:name] == key }[:source]
+            source = schema[:columns].find {|c| c[:name] == key }[:source]
             keys[source] = selector[source]
           end
 
