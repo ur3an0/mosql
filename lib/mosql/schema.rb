@@ -113,7 +113,7 @@ module MoSQL
             end
           end
 
-          log.info("TRUNCATE table '#{meta[:table]}'...")
+          log.info("Truncate table '#{meta[:table]}'...")
           db.run("TRUNCATE TABLE \"#{meta[:table]}\"")
 
         end
