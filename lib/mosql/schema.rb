@@ -113,7 +113,7 @@ module MoSQL
             end
           end
           log.info("Truncate table '#{meta[:table]}'...")
-          truncate_table(meta[:table])
+          db.send(:truncate_table, meta[:table])
         end
       end
     end
