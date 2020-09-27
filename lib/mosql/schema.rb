@@ -112,7 +112,7 @@ module MoSQL
               column '_extra_props', type
             end
           end
-          log.info("Truncating table '#{meta[:table]}'...")
+          log.info("Truncate table '#{meta[:table]}'...")
           truncate_table(meta[:table])
         end
       end
