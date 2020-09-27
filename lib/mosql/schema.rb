@@ -114,7 +114,7 @@ module MoSQL
           end
 
           log.info("TRACATED table '#{meta[:table]}'...")
-          db.send("TRUNCATE TABLE #{meta[:table]}")
+          db.run("TRUNCATE TABLE #{meta[:table]}")
 
         end
       end
