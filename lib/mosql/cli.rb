@@ -7,7 +7,7 @@ module MoSQL
   class CLI
     include MoSQL::Logging
 
-    BATCH       = 1000
+    BATCH       = 2000
 
     attr_reader :args, :options, :tailer
 
