@@ -2,7 +2,7 @@ module MoSQL
   class Streamer
     include MoSQL::Logging
 
-    BATCH = 10
+    BATCH = 1000
 
     attr_reader :options, :tailer
 
