@@ -35,7 +35,8 @@ module MoSQL
         :collections => 'collections.yml',
         :sql    => 'postgres:///',
         :mongo  => 'mongodb://localhost',
-        :verbose => 0
+        :verbose => 0,
+        :batch_insert_size => 1000
       }
       optparse = OptionParser.new do |opts|
         opts.banner = "Usage: #{$0} [options] "
@@ -99,6 +100,10 @@ module MoSQL
 
         opts.on("--unsafe", "Ignore rows that cause errors on insert") do
           @options[:unsafe] = true
+        end
+
+        opts.on("--batch_insert_size [size]", "Service name to use when storing tailing state") do |size|
+          @options[:batch_insert_size] = size
         end
 
         # eg, --oplog-filter '{"ns": {"$regex": "^somedb[0-9]*\\.collection$"}}'
