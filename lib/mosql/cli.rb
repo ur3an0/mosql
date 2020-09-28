@@ -103,7 +103,7 @@ module MoSQL
         end
 
         opts.on("--batch_insert_size [size]", "Service name to use when storing tailing state") do |size|
-          @options[:batch_insert_size] = size
+          @options[:batch_insert_size] = Integer(size)
         end
 
         # eg, --oplog-filter '{"ns": {"$regex": "^somedb[0-9]*\\.collection$"}}'
